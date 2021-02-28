@@ -14,7 +14,7 @@ public class CoffeeShopFrame extends JPanel {
 
     public JFrame DansFrame = new JFrame("Starducks Coffee");
     public JComboBox DrinkMenu, DrinkSizes;
-    public JLabel dLabel, dLabel2, dLabel3, dLabel4, dLabel5, dLabel6, dLabel7;
+    public JLabel dLabel, dLabel2, dLabel3, dLabel4, dLabel5, dLabel6;
     public JButton ConfirmButton = new JButton("Confirm Order");
     public JButton BackToMenu = new JButton("Back To Menu");
     public String drinks[] = {"Americano", "Black Coffee", "Iced Tea", "English Breakfast Tea", "Hot Chocolate"};
@@ -34,6 +34,7 @@ public class CoffeeShopFrame extends JPanel {
         //JTextArea myDrinkOutput = new JTextArea();
         dLabel5 = new JLabel("", JLabel.CENTER);
         dLabel6 = new JLabel("", JLabel.LEFT);
+        //dLabel7 = new JLabel("<html><img  height='180' width='200' src='https://cms.qz.com/wp-content/uploads/2016/10/2427770107_e7be35d768_o-e1475851811724.jpg?quality=75&strip=all&w=1600&h=900&crop=1' /></html>");
         prices.put("Small", SmallPrice);
         prices.put("Medium", MediumPrice);
         prices.put("Large", LargePrice);
@@ -117,6 +118,7 @@ public class CoffeeShopFrame extends JPanel {
         dp.add(dLabel6);
         dp.add(ConfirmButton);
         dp.add(dLabel5);
+        //dp.add(dLabel7);
         DansFrame.add(dp);
         DansFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         DansFrame.pack();
