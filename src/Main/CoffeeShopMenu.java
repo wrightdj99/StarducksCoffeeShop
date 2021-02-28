@@ -14,9 +14,15 @@ public class CoffeeShopMenu extends JPanel{
     public JLabel MainMenu = new JLabel();
     public JLabel SizeMenu = new JLabel();
     public JLabel dLabel7;
+    public JLabel dLabel8;
+    public JLabel dLabel9;
+    public JLabel dLabel10;
     public String Menu = "menu";
     public CoffeeShopMenu(){
-        dLabel7 = new JLabel("<html><img  height='180' width='200' src='https://cms.qz.com/wp-content/uploads/2016/10/2427770107_e7be35d768_o-e1475851811724.jpg?quality=75&strip=all&w=1600&h=900&crop=1' /></html>");
+        dLabel7 = new JLabel("<html><img  height='250' width='270' src='https://cms.qz.com/wp-content/uploads/2016/10/2427770107_e7be35d768_o-e1475851811724.jpg?quality=75&strip=all&w=1600&h=900&crop=1' /></html>");
+        dLabel8 = new JLabel("<html><img  height='250' width='270' src='https://cdn.shopify.com/s/files/1/2504/6898/files/coffee-ceramic-cup-on-marbled-table-reduced_1024x1024.jpg?v=1513790993'");
+        dLabel9 = new JLabel("<html><img  height='250' width='270' src='https://s6.favim.com/orig/151117/cafe-coffee-forest-nature-Favim.com-3583496.jpg'");
+        dLabel10 = new JLabel("<html><img  height='250' width='270' src='https://www.marylandzoo.org/wp-content/uploads/2017/11/wood_duck_web.jpg'");
         String title = "Starducks Coffee";
         Border border = BorderFactory.createTitledBorder(title);
         Border newBorder = BorderFactory.createTitledBorder(Menu);
@@ -31,6 +37,9 @@ public class CoffeeShopMenu extends JPanel{
         SizeMenu.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         button.setFont(new Font("Times New Roman", Font.PLAIN, 30));
         sp.add(dLabel7);
+        sp.add(dLabel8);
+        sp.add(dLabel9);
+        sp.add(dLabel10);
         sp.add(MainMenu);
         sp.add(SizeMenu);
         button.setBounds(300, 500, getWidth(), getHeight());

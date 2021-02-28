@@ -19,6 +19,7 @@ public class CoffeeShopFrame extends JPanel {
     public JButton BackToMenu = new JButton("Back To Menu");
     public String drinks[] = {"Americano", "Black Coffee", "Iced Tea", "English Breakfast Tea", "Hot Chocolate"};
     public String sizes[] = {"Extra Large", "Large", "Medium", "Small"};
+    public String[] flavors = new String[] {"Blueberry Muffin", "Banana Nut Muffin", "Lemon Poppyseed Muffin", "No Muffin (NO ADDITIONAL CHARGE)"};
     Dictionary prices = new Hashtable();
     double SmallPrice = 2.50;
     double MediumPrice = 3.00;
@@ -98,7 +99,16 @@ public class CoffeeShopFrame extends JPanel {
                 }
                 JOptionPane.showMessageDialog(null, "Your order is: " + DrinkSizes.getSelectedItem() + " " + DrinkMenu.getSelectedItem() + "\n"
                 + "Your total comes to: $" + FinalPrice + "0");
-                FinalPrice = 0;
+                //FinalPrice = 0;
+                Object muffin = JOptionPane.showInputDialog(null, "Would you like to add a Blueberry, Lemon Poppyseed or Banana Nut muffin for $2.00?", "No Muffin (NO ADDITIONAL CHARGE)",
+                        JOptionPane.PLAIN_MESSAGE, null, flavors, flavors[3]);
+                if(muffin==flavors[0] || muffin==flavors[1] || muffin==flavors[2]){
+                    FinalPrice = FinalPrice + 2.00;
+                }
+                else{
+
+                }
+                JOptionPane.showMessageDialog(null, "Your total is: $" + FinalPrice + "0");
             }
         });
         String title = "Starducks Coffee";
