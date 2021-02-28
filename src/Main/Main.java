@@ -11,7 +11,6 @@ public class Main {
         //main(String[] args).DansMenu();;
         CoffeeShopFrame CFrame = new CoffeeShopFrame();
         CoffeeShopMenu cMenu = new CoffeeShopMenu();
-        //CFrame.DansMenu();
     }
 
 }

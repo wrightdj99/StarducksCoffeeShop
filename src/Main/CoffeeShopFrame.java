@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class CoffeeShopFrame extends JPanel {
 
@@ -17,7 +19,12 @@ public class CoffeeShopFrame extends JPanel {
     public JButton BackToMenu = new JButton("Back To Menu");
     public String drinks[] = {"Americano", "Black Coffee", "Iced Tea", "English Breakfast Tea", "Hot Chocolate"};
     public String sizes[] = {"Extra Large", "Large", "Medium", "Small"};
-
+    Dictionary prices = new Hashtable();
+    double SmallPrice = 2.50;
+    double MediumPrice = 3.00;
+    double LargePrice = 3.50;
+    double XLargePrice = 4.00;
+    double FinalPrice = 0.00;
     public void DansMenu(){
         //Setting up the screen and pink
         CoffeeShopFrame cf = new CoffeeShopFrame();
@@ -27,7 +34,10 @@ public class CoffeeShopFrame extends JPanel {
         //JTextArea myDrinkOutput = new JTextArea();
         dLabel5 = new JLabel("", JLabel.CENTER);
         dLabel6 = new JLabel("", JLabel.LEFT);
-
+        prices.put("Small", SmallPrice);
+        prices.put("Medium", MediumPrice);
+        prices.put("Large", LargePrice);
+        prices.put("Extra Large", XLargePrice);
         DrinkMenu.setSelectedIndex(0);
         DrinkSizes.setSelectedIndex(0);
         DrinkMenu.addItemListener(new ItemListener() {
@@ -63,6 +73,7 @@ public class CoffeeShopFrame extends JPanel {
         dLabel2.setForeground(Color.BLACK);
         dLabel3.setForeground(Color.BLACK);
         dLabel4.setForeground(Color.BLACK);
+
         BackToMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -72,8 +83,21 @@ public class CoffeeShopFrame extends JPanel {
         ConfirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                JOptionPane.showMessageDialog(null, "Your order is: " + DrinkSizes.getSelectedItem() + " " + DrinkMenu.getSelectedItem());
+                if(DrinkSizes.getSelectedItem()=="Small"){
+                    FinalPrice = FinalPrice + SmallPrice;
+                }
+                else if(DrinkSizes.getSelectedItem()=="Medium"){
+                    FinalPrice = FinalPrice + MediumPrice;
+                }
+                else if(DrinkSizes.getSelectedItem()=="Large"){
+                    FinalPrice = FinalPrice + LargePrice;
+                }
+                else if(DrinkSizes.getSelectedItem()=="Extra Large"){
+                    FinalPrice = FinalPrice + XLargePrice;
+                }
+                JOptionPane.showMessageDialog(null, "Your order is: " + DrinkSizes.getSelectedItem() + " " + DrinkMenu.getSelectedItem() + "\n"
+                + "Your total comes to: $" + FinalPrice + "0");
+                FinalPrice = 0;
             }
         });
         String title = "Starducks Coffee";
